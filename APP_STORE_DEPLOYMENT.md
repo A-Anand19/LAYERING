@@ -9,7 +9,8 @@
 
 ## 2. Assets & Metadata
 - [ ] App Icon (1024x1024 px, no transparency).
-- [ ] Screenshots (6.5-inch and 5.5-inch displays). Must highlight:
+- [ ] Screenshots (6.5-inch, 5.5-inch, and 12.9-inch iPad displays). Must highlight:
+  - Fully responsive UI across all devices
   - Emotional Fingerprint Onboarding
   - Aria Chat Interface
   - Rituals & Insights (Premium features)

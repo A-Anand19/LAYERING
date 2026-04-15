@@ -63,7 +63,7 @@ export default function App() {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black selection:bg-[#FF2D78]/30">
-      <div className="w-full h-[100dvh] sm:h-[844px] sm:w-[390px] bg-[#0D1114] relative overflow-hidden sm:rounded-[40px] sm:border-[8px] sm:border-[#1C1C22] shadow-2xl text-white font-sans">
+      <div className="w-full h-[100dvh] md:max-w-[1024px] mx-auto bg-[#0D1114] relative overflow-hidden shadow-2xl text-white font-sans md:border-x md:border-[#1C1C22]">
         <AnimatePresence mode="wait">
           {currentView === 'launch' && <LaunchScreen key="launch" />}
           {currentView === 'onboarding' && (
@@ -150,8 +150,8 @@ function OnboardingScreen({ onContinue }: { onContinue: () => void, key?: string
         <p className="text-[17px] text-[#AFAFBF] mt-2 font-medium">Tell me, I'm here</p>
       </div>
 
-      <div className="relative z-10 px-7 pb-[52px] flex flex-col gap-4">
-        <div className={`flex items-center justify-center gap-2 mb-4 text-[#AFAFBF] text-[12px] py-2.5 px-5 rounded-full self-center ${liquidGlass}`}>
+      <div className="relative z-10 px-7 pb-12 flex flex-col gap-4">
+        <div className={`flex items-center justify-center gap-2 mt-1 mb-4 text-[#AFAFBF] text-[12px] py-2.5 px-5 rounded-full self-center ${liquidGlass}`}>
           <ShieldCheck size={16} className="text-[#22C55E]" />
           <span className="font-medium tracking-wide">Your conversations stay on your device.</span>
         </div>
@@ -173,7 +173,7 @@ function OnboardingScreen({ onContinue }: { onContinue: () => void, key?: string
         <p className="text-[11px] text-[#6E6E7E] text-center mt-5 leading-relaxed px-4">
           By continuing, you agree to our Terms of Service and Privacy Policy. CluWell is a wellness companion, not a medical device.
         </p>
-        <p className="text-[10px] text-[#4A4A5C] text-center mt-2 font-medium tracking-wide">
+        <p className="text-[11px] text-[#AFAFBF] text-center mt-2 mb-2 font-medium tracking-wide">
           © 2026 Aditya Anand. All Rights Reserved.
         </p>
       </div>
@@ -636,10 +636,10 @@ function ChatScreen({ userData, isPremium, onRequirePremium }: { userData: any, 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(13,23,23,0.6)_0%,rgba(13,17,20,1)_70%)] pointer-events-none" />
 
       {/* Chat Header */}
-      <div className={`h-[100px] pt-10 pb-2 px-5 flex items-center justify-end z-20 ${liquidGlass} rounded-none border-t-0 border-x-0 relative`}>
+      <div className="absolute top-0 left-0 right-0 h-[100px] pt-10 pb-2 px-5 flex items-center justify-end z-50 pointer-events-none">
         <button 
           onClick={() => { haptic('medium'); setShowMemory(true); }}
-          className={`p-2.5 mr-2 rounded-full ${liquidGlass} transition-all duration-300 ease-out active:scale-[0.96] shrink-0`}
+          className={`p-2.5 mr-2 rounded-full ${liquidGlass} transition-all duration-300 ease-out active:scale-[0.96] shrink-0 pointer-events-auto`}
         >
           <Brain size={22} className="text-[#A5B4FC]" />
         </button>
@@ -660,12 +660,12 @@ function ChatScreen({ userData, isPremium, onRequirePremium }: { userData: any, 
             <h2 className="text-[36px] font-bold mb-2 tracking-tight">Hi.</h2>
             <h3 className="text-[24px] text-[#AFAFBF] mb-10 tracking-tight font-medium">Where should we start?</h3>
             
-            <div className={`w-full p-2 rounded-[28px] ${liquidGlass} flex items-center gap-2 mb-8 shadow-[0_12px_40px_rgba(0,0,0,0.4)]`}>
+            <div className={`w-full p-1.5 pl-4 pr-1.5 rounded-[28px] ${liquidGlass} flex items-center gap-1.5 mb-8 shadow-[0_12px_40px_rgba(0,0,0,0.4)]`}>
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Message Aria..."
-                className="flex-1 bg-transparent text-[17px] text-white placeholder:text-[#6E6E7E] px-4 py-3 focus:outline-none"
+                className="flex-1 min-w-0 bg-transparent text-[17px] text-white placeholder:text-[#6E6E7E] px-2 py-3 focus:outline-none"
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') handleSend();
                 }}
@@ -702,7 +702,7 @@ function ChatScreen({ userData, isPremium, onRequirePremium }: { userData: any, 
             </div>
           </motion.div>
         ) : (
-          <div className="flex-1 px-4 py-6 flex flex-col gap-4">
+          <div className="flex-1 px-4 py-6 pt-[100px] flex flex-col gap-4">
             {messages.map((msg) => (
               <motion.div 
                 key={msg.id}
@@ -741,12 +741,12 @@ function ChatScreen({ userData, isPremium, onRequirePremium }: { userData: any, 
             animate={{ opacity: 1, y: 0 }}
             className="absolute bottom-[80px] left-0 right-0 px-4 pb-4 pt-2 bg-gradient-to-t from-[#0D1114] via-[#0D1114] to-transparent z-20"
           >
-            <div className={`flex items-end gap-1.5 p-1.5 pl-4 pr-3 rounded-[28px] ${liquidGlass}`}>
+            <div className={`flex items-end gap-1.5 p-1.5 pl-4 pr-1.5 rounded-[28px] ${liquidGlass}`}>
               <textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Message Aria..."
-                className="flex-1 max-h-[120px] min-h-[44px] bg-transparent text-white placeholder:text-[#6E6E7E] py-3 focus:outline-none resize-none text-[16px]"
+                className="flex-1 min-w-0 max-h-[120px] min-h-[44px] bg-transparent text-white placeholder:text-[#6E6E7E] py-3 focus:outline-none resize-none text-[16px]"
                 rows={1}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
@@ -755,7 +755,7 @@ function ChatScreen({ userData, isPremium, onRequirePremium }: { userData: any, 
                   }
                 }}
               />
-              <div className="flex items-center gap-1.5 shrink-0 pb-1">
+              <div className="flex items-center gap-1.5 shrink-0 pb-0.5">
                 <button 
                   onClick={() => {
                     haptic('medium');

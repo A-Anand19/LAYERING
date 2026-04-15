@@ -112,6 +112,7 @@ When prompting Opus for code, **never ask for the whole app at once.** Use this 
 ## 7. THE APPLE-LEVEL DESIGN PHILOSOPHY
 *To be enforced in every single Opus prompt.*
 
+*   **Fully Responsive Architecture:** Fluidly adapts to any screen size, specifically optimized for all iOS devices (iPhone, iPad).
 *   **Zero unnecessary animation.** If it doesn't communicate state, remove it.
 *   **Every tap has a haptic.** No touch is silent.
 *   **Every destructive action warns first.** No data loss without confirmation.
