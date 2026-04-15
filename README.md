@@ -1,20 +1,48 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# CluWell - iOS Application (Frontend MVP)
 
-# Run and deploy your AI Studio app
+## Overview
+CluWell is a premium, AI-powered emotional intelligence and wellness companion. This repository contains the production-ready frontend MVP, meticulously crafted with an "Apple-level" design philosophy. 
 
-This contains everything you need to run your app locally.
+The application features a hyper-realistic **Liquid Glassmorphism 2.0** aesthetic, buttery-smooth 120fps-optimized animations, and a deeply immersive user experience.
 
-View your app in AI Studio: https://ai.studio/apps/dcd07056-17e7-4d04-bb87-b2cb372fd215
+## Design Philosophy & Aesthetics
+- **Liquid Glassmorphism 2.0:** A restrained, elegant 10% glassmorphism shell with wide-spread illuminating ambient glows.
+- **Organic Motion:** Physics-based spring animations (`framer-motion`) tuned for snappy, responsive interactions.
+- **Cinematic Transitions:** Precisely timed 1.54s cinematic crossfades between the launch and onboarding states.
+- **Color Palette:** Deep charcoal (`#0D1114`) OLED-optimized backgrounds with calming teal and vibrant magenta/indigo accents.
+- **Haptic Feedback:** Integrated vibration patterns (Light, Medium, Heavy, Success) for tactile physical responses.
 
-## Run Locally
+## Tech Stack
+- **Framework:** React 18 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
 
-**Prerequisites:**  Node.js
+## Getting Started
 
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Installation
+1. Clone the repository or extract the ZIP file.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open `http://localhost:3000` in your browser.
+
+## Deployment Preparation
+This codebase is optimized for deployment. To create a production build:
+```bash
+npm run build
+```
+The output will be generated in the `dist/` directory, ready to be wrapped in a WebView (e.g., React Native WebView, Capacitor, or Swift WKWebView) for App Store submission.
+
+## Copyright
+© 2026 Aditya Anand. All Rights Reserved.

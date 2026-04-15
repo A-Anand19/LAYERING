@@ -56,7 +56,7 @@ export default function App() {
 
   useEffect(() => {
     if (currentView === 'launch') {
-      const timer = setTimeout(() => setCurrentView('onboarding'), 1500);
+      const timer = setTimeout(() => setCurrentView('onboarding'), 1540);
       return () => clearTimeout(timer);
     }
   }, [currentView]);
@@ -96,7 +96,7 @@ function LaunchScreen() {
   return (
     <motion.div 
       className="absolute inset-0 bg-black flex flex-col items-center justify-center z-50"
-      exit={{ opacity: 0, transition: { duration: 0.4, ease: "easeOut" } }}
+      exit={{ opacity: 0, transition: { duration: 1.54, ease: "easeOut" } }}
     >
       <motion.div
         initial={{ scale: 0.3, opacity: 0 }}
@@ -130,9 +130,8 @@ function OnboardingScreen({ onContinue }: { onContinue: () => void, key?: string
     <motion.div 
       className="absolute inset-0 bg-[#0D1114] flex flex-col z-40"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.2 }}
+      animate={{ opacity: 1, transition: { duration: 1.54, ease: "easeOut" } }}
+      exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
     >
       <motion.div 
         animate={{ x: [ -80, 80, -80 ], y: [ -200, -120, -200 ] }}
@@ -173,6 +172,9 @@ function OnboardingScreen({ onContinue }: { onContinue: () => void, key?: string
         </button>
         <p className="text-[11px] text-[#6E6E7E] text-center mt-5 leading-relaxed px-4">
           By continuing, you agree to our Terms of Service and Privacy Policy. CluWell is a wellness companion, not a medical device.
+        </p>
+        <p className="text-[10px] text-[#4A4A5C] text-center mt-2 font-medium tracking-wide">
+          © 2026 Aditya Anand. All Rights Reserved.
         </p>
       </div>
     </motion.div>
